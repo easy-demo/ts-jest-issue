@@ -1,6 +1,11 @@
 export class TestClass {
-    public async /* A comment here cause error with async/await when target>=2017 */ say() {
-        await Promise.resolve();
+    async say() {
+        await import('./other')
+
         return 'hello world';
+    }
+
+    sayAgain() {
+        return import('./other');
     }
 }
